@@ -80,6 +80,10 @@ test:
 #
 production:
   <<: *default
+  host: localhost
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
   database: case_browser_production
-  username: case_browser
+  username: <%= ENV['CASE_BROWSER_DATABASE_USER'] %>
   password: <%= ENV['CASE_BROWSER_DATABASE_PASSWORD'] %>
